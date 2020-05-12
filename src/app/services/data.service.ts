@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
-  cartItems: string[] = [];
+  private cartItems: string[] = [];
 
   list$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
   private cartItemsSubject: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
