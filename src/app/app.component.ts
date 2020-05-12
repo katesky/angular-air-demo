@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngHouston-demo';
+  title = 'Angular Air-demo';
   list: string[] = [];
 
   add(candy:string){
