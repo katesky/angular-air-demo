@@ -9,8 +9,8 @@ export class AppComponent {
   title = 'Angular Air-demo';
   list: string[] = [];
 
-  add(candy: string) {
-    this.list.push(candy);
+  add(item: string) {
+    this.list.push(item);
   }
   remove(index) {
     this.list.splice(index, 1);
