@@ -17,5 +17,4 @@ export class CartComponent  {
     this.removeEvent.emit(index);
   }
 
-
 }

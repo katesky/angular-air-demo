@@ -9,6 +9,8 @@ export class DataService {
   cartItems: string[] = [];
   list$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
   cartItems$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+
+
   constructor(private http: HttpClient) {  }
 
   getData() {
@@ -18,7 +20,7 @@ export class DataService {
   }
   addTocart(item: string) {
     this.cartItems.push(item);
-    this.cartItems$.next(this.cartItems);
+    this.cartItems$.next([...this.cartItems]);
 
   }
   removeFromcart(index: any) {

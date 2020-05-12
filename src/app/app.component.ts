@@ -7,7 +7,7 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular Air-demo'; 
+  title = 'Angular Air-demo';
   list$ =  this.dataService.list$;
   cartItems$ =  this.dataService.cartItems$;
 
