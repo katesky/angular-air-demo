@@ -7,8 +7,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
   cartItems: string[] = [];
+
   list$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
-  cartItems$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+  private cartItemsSubject: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+  cartItems$ = this.cartItemsSubject.asObservable();
 
 
   constructor(private http: HttpClient) {  }
@@ -20,11 +22,11 @@ export class DataService {
   }
   addTocart(item: string) {
     this.cartItems.push(item);
-    this.cartItems$.next([...this.cartItems]);
+    this.cartItemsSubject.next([...this.cartItems]);
 
   }
   removeFromcart(index: any) {
     this.cartItems.splice(index, 1);
-    this.cartItems$.next(this.cartItems);
+    this.cartItemsSubject.next(this.cartItems);
   }
 }
