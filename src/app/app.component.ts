@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular Air-demo';
   list: string[] = [];
+  list$ =  this.dataService.list$;
+  cartItems$ =  this.dataService.cartItems$;
+
+  constructor( private dataService: DataService) {
+    this.dataService.getData();
+  }
 
   add(item: string) {
-    this.list.push(item);
+    this.dataService.addTocart(item);
   }
   remove(index) {
-    this.list.splice(index, 1);
+    this.dataService.removeFromcart(index);
   }
 }
