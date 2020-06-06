@@ -9,17 +9,15 @@ import { DataService } from './services/data.service';
 export class AppComponent {
   title = 'Angular Air-demo';
   list: string[] = [];
-  list$ =  this.dataService.list$;
+  list$ =  this.dataService.getData();
   cartItems$ =  this.dataService.cartItems$;
 
-  constructor( private dataService: DataService) {
-    this.dataService.getData();
-  }
+  constructor( private dataService: DataService) {}
 
   add(item: string) {
-    this.dataService.addTocart(item);
+    this.dataService.addToCart(item);
   }
   remove(index) {
-    this.dataService.removeFromcart(index);
+    this.dataService.removeFromCart(index);
   }
 }

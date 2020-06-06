@@ -12,10 +12,7 @@ export class ListComponent   {
   @Input() list: string[];
   @Output() addEvent: EventEmitter<string> = new EventEmitter();
 
-  add(item){
+  add(item) {
     this.addEvent.emit(item);
   }
-
-
-
 }
